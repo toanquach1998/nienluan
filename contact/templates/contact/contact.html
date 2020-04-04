@@ -160,8 +160,8 @@
 									{% endif %}
 							</select>
 							<select name="info_form_doc" id="info_form_doc" class="info_form_doc info_input info_select">
-									{% if dsbacsi %}
-										{% for item in dsbacsi %}
+									{% if dskhoa %}
+										{% for item in dskhoa.bacsi_set.all %}
 											<option>{{ item.ten_bacsi }}</option>
 										{% endfor %}
 									{% endif %}
