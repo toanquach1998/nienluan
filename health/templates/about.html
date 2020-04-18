@@ -29,6 +29,13 @@
 				<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 			</form>
 			<ul>
+				{% if  user.username %}
+					<li><a>  {{user.username}} </a></li>
+					<li><a href="logout">Đăng xuất</li>
+				{% else %}
+					<li><a href="register">Đăng kí</a></li>
+					<li><a href="login">Đăng nhập</li>
+				{% endif %}
 				<li class="menu_item"><a href="{% url 'index' %}">Trang chủ</a></li>
 				<li class="menu_item"><a href="{% url 'about_us' %}">Giới thiệu</a></li>
 				<li class="menu_item"><a href="{% url 'services' %}">Dịch vụ</a></li>

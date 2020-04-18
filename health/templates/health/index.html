@@ -64,6 +64,13 @@
 									<div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
 										<div class="header_top_nav">
 											<ul class="d-flex flex-row align-items-center justify-content-start">
+												{% if  user.username %}
+													<li><a>  {{user.username}} </a></li>
+													<li><a href="logout">Đăng xuất</li>
+												{% else %}
+													<li><a href="register">Đăng kí</a></li>
+													<li><a href="login">Đăng nhập</li>
+												{% endif %}
 												<li><a href="#">Chăm sóc khách hàng</a></li>
 												<li><a href="#">Dịch vụ khẩn cấp</a></li>
 												<li><a href="#">Đặt lịch hẹn</a></li>
