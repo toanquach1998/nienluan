@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 
 class RegistrationFrom(forms.Form):
-    username = forms.CharField(label='Tài khoản', max_length= 30)
+    username = forms.CharField(label='Tài khoản', max_length= 30)   
     password1 = forms.CharField(label='Mật khẩn', widget=forms.PasswordInput())
     password2 = forms.CharField(label='Nhập lại mật khẩu', widget=forms.PasswordInput())
     email = forms.EmailField(label='Email')

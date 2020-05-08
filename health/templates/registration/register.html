@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang = 'en'>
+<style>
+</style>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <link rel="stylesheet" type="text/css" href=" {% static 'styles/bootstrap4/bootstrap.min.css'%}">
+  <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <title>Đăng ký</title>
+</head>
+<body>
+<center>
+    <div class="container">
+        <div class="card mt-4">
+            <div class=" card-body">
+                 <form class="form-group" action = '.', method="POST">
+                 {% csrf_token %}
+                    <h2 style="color:#007bff">Đăng ký tài khoản</h2>
+                    {{form.as_p}} 
+            <button type="submit" class="btn btn-primary">Đăng ký</button>
+                </form>
+            </div>
+        </div>     
+    </div>
+    
+</center>
+</body>
+</html>
+

@@ -1,123 +1,21 @@
 <!DOCTYPE html>	
-{% extends 'health/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
- {% block cssblock %}
-<link rel="stylesheet" type="text/css" href=" {% static 'styles/bootstrap4/bootstrap.min.css'%}">
-<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
-<link rel="stylesheet"  href="{% static 'css.css' %}">
+
+
+{% block head %}
+  <link rel="stylesheet" type="text/css" href=" {% static 'styles/bootstrap4/bootstrap.min.css'%}">
+  <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+  <link rel="stylesheet"  href="{% static 'css.css' %}">
+
 {% endblock %}
-
  {% block content %}
-<div class="super_container">
 
-	<!-- Menu -->
-
-	<div class="menu trans_500">
-		<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
-			<div class="menu_close_container"><div class="menu_close"></div></div>
-			<form action="#" class="menu_search_form">
-				<input type="text" class="menu_search_input" placeholder="Search" required="required">
-				<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
-			</form>
-			<ul>
-				<li class="menu_item"><a href="{% url 'index' %}">Home</a></li>
-				<li class="menu_item"><a href="{% url 'about_us' %}">About us</a></li>
-				<li class="menu_item"><a href="{% url 'services' %}">Services</a></li>
-				<li class="menu_item"><a href="{% url 'news' %}">News</a></li>
-				<li class="menu_item"><a href="{% url 'contact' %}">Contact</a></li>
-			</ul>
-		</div>
-		<div class="menu_social">
-			<ul>
-				<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-			</ul>
-		</div>
-	</div>
-
-	<!-- Home -->
-
-	<div class="home">
-		<div class="background_image" style=" background-image:url({% static 'images/123.jpg' %})"></div>
-
-		<!-- Header -->
-
-		<header class="header" id="header">
-			<div>
-				<div class="header_top">
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
-									<div class="logo">
-										<a href="#">Sức khỏe<span>+</span></a>	
-									</div>
-									<div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
-										<div class="header_top_nav">
-											<ul class="d-flex flex-row align-items-center justify-content-start">
-												{% if  user.username %}
-													<li><a>  {{user.username}} </a></li>
-													<li><a href="logout">Đăng xuất</li>
-												{% else %}
-													<li><a href="register">Đăng kí</a></li>
-													<li><a href="login">Đăng nhập</li>
-												{% endif %}
-												<li><a href="#">Chăm sóc khách hàng</a></li>
-												<li><a href="#">Dịch vụ khẩn cấp</a></li>
-												<li><a href="#">Đặt lịch hẹn</a></li>
-											</ul>
-										</div>
-										<div class="header_top_phone">
-											<i class="fa fa-phone" aria-hidden="true"></i>
-											<span>+84 999 999 999</span>
-										</div>
-									</div>
-									<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="header_nav" id="header_nav_pin">
-					<div class="header_nav_inner">
-						<div class="header_nav_container">
-							<div class="container">
-								<div class="row">
-									<div class="col">
-										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
-											<nav class="main_nav">
-												<ul class="d-flex flex-row align-items-center justify-content-start">
-													<li class="active"><a href="{% url 'index' %}">Trang chủ</a></li>
-													<li><a href="{% url 'about_us' %}">Giới thiệu</a></li>
-													<li><a href="{% url 'services' %}">Dịch vụ</a></li>
-													<li><a href="{% url 'news' %}">Tin tức</a></li>
-													<li><a href="{% url 'contact' %}">Liên hệ</a></li>
-												</ul>
-											</nav>
-											<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
-												<form action="#" id="search_container_form" class="search_container_form">
-													<input type="text" class="search_container_input" placeholder="Tìm kiếm" required="required">
-													<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>	
-			</div>
-		</header>
 
 		<div class="home_container">
 			<div class="container">
@@ -167,7 +65,7 @@
 				<!-- Info Form -->
 				<div class="col-lg-4 info_box_col">
 					<div class="info_form_container">
-						<div class="info_form_title">ĐẶT LỊCH HẸN</div>
+						<div class="info_form_title">BẢNG ĐÁNG GIÁ</div>
 						<form action="#" class="info_form" id="info_form">
 							<select name="info_form_dep" id="info_form_dep" class="info_form_dep info_input info_select">
 								<option>Phòng ban</option>
@@ -179,9 +77,9 @@
 								<option>Doctor</option>
 								<option>Doctor</option>
 							</select>
-							<input type="text" class="info_input" placeholder="Tên" required="required">
-							<input type="text" class="info_input" placeholder="Số điện thoại">
-							<button class="info_form_button">đặt lịch hẹn</button>
+							<input type="text" class="info_input" placeholder="Số điểm(10/10)	" required="">
+							<input type="text" class="info_input" placeholder="yeah yeah">
+							<a href="{% url 'contact' %}"><button class="info_form_button">đặt lịch hẹn ngay</button></a>
 						</form>
 					</div>
 				</div>
@@ -192,16 +90,16 @@
 	<!-- CTA -->
 
 	<div class="cta">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/cta_1.jpg' %}" data-speed="0.8"></div>
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-speed="0.8"><img src="{% static 'images/cta_1.jpg' %}"  ></div>
 		<div class="container">
 			<div class="row">
 				<div class="col">
 					<div class="cta_container d-flex flex-xl-row flex-column align-items-xl-start align-items-center justify-content-xl-start justify-content-center">
 						<div class="cta_content text-xl-left text-center">
-							<div class="cta_title">Make an appointment with one of our professional Doctors.</div>
-							<div class="cta_subtitle">Morbi arcu neque, scelerisque eget ligula ac, congue tempor felis. Integer tempor, eros a egestas.</div>
+							<div class="cta_title" >Đặt lịch hẹn ngay hôm nay, với những dịch vụ tuyệt vời của chúng tôi.</div>
+							<div class="cta_subtitle">Sức khỏe, sắc đẹp với một liên hệ đơn giản và dịch vụ tuyệt vời nhất.</div>
 						</div>
-						<div class="button cta_button ml-xl-auto"><a href="#"><span>call now</span><span>call now</span></a></div>
+						<div class="button cta_button ml-xl-auto"><a href="{% url 'contact' %}">><span>liên hệ</span><span>đặt lịch</span></a></div>
 					</div>
 				</div>
 			</div>
@@ -279,7 +177,7 @@
 				<div class="col-xl-4 col-lg-6">
 					<div class="icon_box">
 						<div class="icon_box_title_container d-flex flex-row align-items-center justify-content-start">
-							<div class="icon_box_icon"><img src="{% static 'images/icon_6.svg'%}" alt=""></div>
+							<div class="icon_box_icon"><img src="{% static 'images/icon_6.svg' %}" alt=""></div>
 							<div class="icon_box_title">Khoa Thần Kinh</div>
 						</div>
 						<div class="icon_box_text">Khoa Thần Kinh Khoa Thần Kinh Khoa Thần Kinh Khoa Thần Kinh Khoa Thần Kinh Khoa Thần Kinh Khoa Thần Kinh.</div>
@@ -315,7 +213,7 @@
 								
 								<!-- Slide -->
 								<div class="owl-item dept_item">
-									<div class="dept_image"><img src="{% static 'images/dept1.jpg' %}" alt=""></div>
+									<div class="dept_image"><img src= "static/images/dept1.jpg' %}" ></div>
 									<div class="dept_content">
 										<div class="dept_title">Neonatology</div>
 										<div class="dept_link"><a href="#">Read More</a></div>
@@ -372,8 +270,8 @@
 				<!-- FAQ -->
 				<div class="col-lg-7">
 					<div class="faq">
-						<div class="faq_title">Faq & Stuff</div>
-						<div class="faq_subtitle">read all about it</div>
+						<div class="faq_title">Hỏi & Đáp</div>
+						<div class="faq_subtitle">những câu hỏi thường gặp</div>
 						<div class="elements_accordions">
 							<div class="accordions">
 
@@ -412,15 +310,15 @@
 				<!-- Latest News -->
 				<div class="col-lg-5">
 					<div class="news">
-						<div class="news_title">Latest News</div>
-						<div class="news_subtitle">read all about it</div>
+						<div class="news_title">Tin tức mới</div>
+						<div class="news_subtitle">đọc thêm</div>
 						<div class="news_container">
 
 							<!-- Latest News Post -->
 							<div class="latest d-flex flex-row align-items-start justify-content-start">
 								<div><div class="latest_image"><img src="{% static 'images/latest_1.jpg' %}" alt=""></div></div>
 								<div class="latest_content">
-									<div class="latest_title"><a href="news.html">A simple blog post</a></div>
+									<div class="latest_title"><a href="{% url 'news' %}">A simple blog post</a></div>
 									<div class="latest_info">
 										<ul class="d-flex flex-row align-items-start justify-content-start">
 											<li><a href="#">by Jane Smith</a></li>
@@ -472,122 +370,14 @@
 
  {% endblock %}
  {% block footer %}
-		<!-- Footer -->
 
-	<footer class="footer">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="static/images/footer.jpg" data-speed="0.8"></div>
-		<div class="footer_content">
-			<div class="container">
-				<div class="row">
-
-					<!-- Footer About -->
-					<div class="col-lg-3 footer_col">
-						<div class="footer_about">
-							<div class="logo">
-								<a href="#", style='color:black'>Sức khỏe<span>+</span></a>	
-							</div>
-							<div class="footer_about_text",, style='color:black'>Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing elit. Donec malesuada lorem maximus mauris.</div>
-							<div class="footer_social">
-								<ul class="d-flex flex-row align-items-center justify-content-start">
-									<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-								</ul>
-							</div>
-							<div class="copyright", , style='color:black'><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</div>
-						</div>
-					</div>
-					
-					<!-- Footer Contact -->
-					<div class="col-lg-5 footer_col">
-						<div class="footer_contact">
-							<div class="footer_contact_title", , style='color:black'>Quick Contact</div>
-							<div class="footer_contact_form_container">
-								<form action="#" class="footer_contact_form" id="footer_contact_form">
-									<div class="d-flex flex-xl-row flex-column align-items-center justify-content-between">
-										<input type="text" class="footer_contact_input" placeholder="Name" required="required">
-										<input type="email" class="footer_contact_input" placeholder="E-mail" required="required">
-									</div>
-									<textarea class="footer_contact_input footer_contact_textarea" placeholder="Message" required="required"></textarea>
-									<button class="footer_contact_button">send message</button>
-								</form>
-							</div>
-						</div>
-					</div>
-
-					<!-- Footer Hours -->
-					<div class="col-lg-4 footer_col">
-						<div class="footer_hours">
-							<div class="footer_hours_title">Opening Hours</div>
-							<ul class="hours_list">
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div>Monday – Thursday</div>
-									<div class="ml-auto">8.00 – 19.00</div>
-								</li>
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div>Friday</div>
-									<div class="ml-auto">8.00 - 18.30</div>
-								</li>
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div>Saturday</div>
-									<div class="ml-auto">9.30 – 17.00</div>
-								</li>
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div>Sunday</div>
-									<div class="ml-auto">9.30 – 15.00</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="footer_bar">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="footer_bar_content d-flex flex-sm-row flex-column align-items-lg-center align-items-start justify-content-start">
-							<nav class="footer_nav">
-								<ul class="d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
-									<li class="active"><a href="index.html">Home</a></li>
-									<li><a href="{% url 'about_us' %}">About Us</a></li>
-									<li><a href="{% url 'services' %}">Dịch vụ</a></li>
-									<li><a href="{% url 'news' %}">News</a></li>
-									<li><a href="{% url 'contact' %}">Contact</a></li>
-								</ul>
-							</nav>
-							<div class="footer_links">
-								<ul class="d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
-									<li><a href="#">Help Desk</a></li>
-									<li><a href="#">Emergency Services</a></li>
-									<li><a href="#">Appointment</a></li>
-								</ul>
-							</div>
-							<div class="footer_phone ml-lg-auto">
-								<i class="fa fa-phone" aria-hidden="true"></i>
-								<span>+34 586 778 8892</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-</div>
  {% endblock %}
- {% block jsblock %}
- 
- <script src="js/jquery-3.3.1.min.js"></script>
-<script src="styles/bootstrap4/popper.js"></script>
-<script src="styles/bootstrap4/bootstrap.min.js"></script>
-<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="plugins/easing/easing.js"></script>
-<script src="plugins/parallax-js-master/parallax.min.js"></script>
-<script src="js/custom.js"></script>
- {% endblock %}
+{% block jsblock %}
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="styles/bootstrap4/popper.js"></script>
+	<script src="styles/bootstrap4/bootstrap.min.js"></script>
+	<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+	<script src="plugins/easing/easing.js"></script>
+	<script src="plugins/parallax-js-master/parallax.min.js"></script>
+	<script src="js/custom.js"></script>
+{% endblock %}
