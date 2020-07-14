@@ -41,7 +41,7 @@
 						
 						<!-- News Post -->
 						<div class="news_post">
-							{% for item in page_obj %}
+							{% if item  %}
 							
 							<div class="news_post_image"><img src="{{ item.picture.url }}" alt=""></div>
 							<div class="news_post_content">
@@ -56,13 +56,11 @@
 								<div class="news_post_text">
 									<p> {{ item.description }}</p>
 								</div>
-								<div class="button news_post_button"><a href="{% url 'new_list' %}">
-								<span>Đọc thêm</span><span>Đọc thêm</span></a>
-								</div>
+								<div class="button news_post_button"><a href="{% url 'new_list' %}"><span>Đọc thêm</span><span>Đọc thêm</span></a></div>
 								<br>
 							</div>
-						
-							{%endfor%}
+    {%else%}
+							{%endif%}
 						</div>
 
 						<!-- News Post -->
@@ -98,8 +96,7 @@
 						<div class="sidebar_search">
 							<form action="#" id="sidebar_search" class="sidebar_search">
 								<input type="text" class="sidebar_search_input" placeholder="Tìm kiếm" required="required">
-								<button class="sidebar_search_button"><i class="fa fa-search" aria-hidden="true"></i>
-								</button>
+								<button class="sidebar_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 							</form>
 						</div>
 

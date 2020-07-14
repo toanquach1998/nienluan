@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
-  <link rel="stylesheet"  href="{% static 'css.css' %}">
+  
 
 {% endblock %}
  {% block content %}
@@ -99,7 +99,7 @@
 							<div class="cta_title" >Đặt lịch hẹn ngay hôm nay, với những dịch vụ tuyệt vời của chúng tôi.</div>
 							<div class="cta_subtitle">Sức khỏe, sắc đẹp với một liên hệ đơn giản và dịch vụ tuyệt vời nhất.</div>
 						</div>
-						<div class="button cta_button ml-xl-auto"><a href="{% url 'contact' %}">><span>liên hệ</span><span>đặt lịch</span></a></div>
+						<div class="button cta_button ml-xl-auto"><a href="{% url 'contact' %}"><span>liên hệ</span><span>đặt lịch</span></a></div>
 					</div>
 				</div>
 			</div>
@@ -113,7 +113,7 @@
 			<div class="row">
 				<div class="col text-center">
 					<div class="section_title">Dịch vụ của chúng tôi</div>
-					<div class="section_subtitle"></div>
+					<div class="section_subtitle">Đa dạng - Tốt nhất</div>
 				</div>
 			</div>
 			<div class="row icon_boxes_row">
@@ -187,185 +187,14 @@
 			</div>
 			<div class="row">
 				<div class="col">
-					<div class="button services_button ml-auto mr-auto"><a href="#"><span>read more</span><span>read more</span></a></div>
+					<div class="button services_button ml-auto mr-auto"><a href="#"><span>đọc thêm</span><span>đọc thêm</span></a></div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- Departments -->
 
-	<div class="departments">
-		<div class="container">
-			<div class="row">
-				<div class="col text-center">
-					<div class="section_title">Our Departments</div>
-					<div class="section_subtitle">to choose from</div>
-				</div>
-			</div>
-			<div class="row dept_row">
-				<div class="col">
-					<div class="dept_slider_container_outer">
-						<div class="dept_slider_container">
-
-							<!-- Slider -->
-							<div class="owl-carousel owl-theme dept_slider">
-								
-								<!-- Slide -->
-								<div class="owl-item dept_item">
-									<div class="dept_image"><img src= "static/images/dept1.jpg' %}" ></div>
-									<div class="dept_content">
-										<div class="dept_title">Neonatology</div>
-										<div class="dept_link"><a href="#">Read More</a></div>
-									</div>
-								</div>
-
-								<!-- Slide -->
-								<div class="owl-item dept_item">
-									<div class="dept_image"><img src="{% static 'images/dept2.jpg' %}" alt=""></div>
-									<div class="dept_content">
-										<div class="dept_title">Dentistry</div>
-										<div class="dept_link"><a href="#">Read More</a></div>
-									</div>
-								</div>
-
-								<!-- Slide -->
-								<div class="owl-item dept_item">
-									<div class="dept_image"><img src="{% static 'images/dept3.jpg' %}" alt=""></div>
-									<div class="dept_content">
-										<div class="dept_title">Orthopedics</div>
-										<div class="dept_link"><a href="#">Read More</a></div>
-									</div>
-								</div>
-
-								<!-- Slide -->
-								<div class="owl-item dept_item">
-									<div class="dept_image"><img src="{% static 'images/dept4.jpg' %}" alt=""></div>
-									<div class="dept_content">
-										<div class="dept_title">Laboratory</div>
-										<div class="dept_link"><a href="#">Read More</a></div>
-									</div>
-								</div>
-
-							</div>
-							
-						</div>
-
-						<!-- Dept Slider Nav -->
-						<div class="dept_slider_nav"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-
-					</div>
-						
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- FAQ & News -->
-
-	<div class="stuff">
-		<div class="container">
-			<div class="row">
-
-				<!-- FAQ -->
-				<div class="col-lg-7">
-					<div class="faq">
-						<div class="faq_title">Hỏi & Đáp</div>
-						<div class="faq_subtitle">những câu hỏi thường gặp</div>
-						<div class="elements_accordions">
-							<div class="accordions">
-
-								<div class="accordion_container">
-									<div class="accordion d-flex flex-row align-items-center active"><div>Maecenas fermentum tortor id fringilla molestie.</div></div>
-									<div class="accordion_panel">
-										<div>
-											<p>Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing elit. Donec malesuada lorem maximus mauris. Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing.</p>
-										</div>
-									</div>
-								</div>
-
-								<div class="accordion_container">
-									<div class="accordion d-flex flex-row align-items-center"><div>Duis quis lacinia elit. Etiam varius mi eget lacus ultricies elementum</div></div>
-									<div class="accordion_panel">
-										<div>
-											<p>Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing elit. Donec malesuada lorem maximus mauris. Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing.</p>
-										</div>
-									</div>
-								</div>
-
-								<div class="accordion_container">
-									<div class="accordion d-flex flex-row align-items-center"><div>Maecenas fermentum tortor id fringilla molestie.</div></div>
-									<div class="accordion_panel">
-										<div>
-											<p>Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing elit. Donec malesuada lorem maximus mauris. Lorem ipsum dolor sit amet, lorem maximus consectetur adipiscing.</p>
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Latest News -->
-				<div class="col-lg-5">
-					<div class="news">
-						<div class="news_title">Tin tức mới</div>
-						<div class="news_subtitle">đọc thêm</div>
-						<div class="news_container">
-
-							<!-- Latest News Post -->
-							<div class="latest d-flex flex-row align-items-start justify-content-start">
-								<div><div class="latest_image"><img src="{% static 'images/latest_1.jpg' %}" alt=""></div></div>
-								<div class="latest_content">
-									<div class="latest_title"><a href="{% url 'news' %}">A simple blog post</a></div>
-									<div class="latest_info">
-										<ul class="d-flex flex-row align-items-start justify-content-start">
-											<li><a href="#">by Jane Smith</a></li>
-											<li><a href="#">April 25, 2018</a></li>
-										</ul>
-									</div>
-									<div class="latest_comments"><a href="#">2 Comments</a></div>
-								</div>
-							</div>
-
-							<!-- Latest News Post -->
-							<div class="latest d-flex flex-row align-items-start justify-content-start">
-								<div><div class="latest_image"><img src="{% static 'images/latest_2.jpg' %}" alt=""></div></div>
-								<div class="latest_content">
-									<div class="latest_title"><a href="news.html">A new way to see things in medicine</a></div>
-									<div class="latest_info">
-										<ul class="d-flex flex-row align-items-start justify-content-start">
-											<li><a href="#">by Jane Smith</a></li>
-											<li><a href="#">April 25, 2018</a></li>
-										</ul>
-									</div>
-									<div class="latest_comments"><a href="#">2 Comments</a></div>
-								</div>
-							</div>
-
-							<!-- Latest News Post -->
-							<div class="latest d-flex flex-row align-items-start justify-content-start">
-								<div><div class="latest_image"><img src="{% static 'images/latest_3.jpg' %}" alt=""></div></div>
-								<div class="latest_content">
-									<div class="latest_title"><a href="news.html">Why is Pharma industry so big?</a></div>
-									<div class="latest_info">
-										<ul class="d-flex flex-row align-items-start justify-content-start">
-											<li><a href="#">by Jane Smith</a></li>
-											<li><a href="#">April 25, 2018</a></li>
-										</ul>
-									</div>
-									<div class="latest_comments"><a href="#">2 Comments</a></div>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
+	
 
 
  {% endblock %}
@@ -373,11 +202,11 @@
 
  {% endblock %}
 {% block jsblock %}
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="styles/bootstrap4/popper.js"></script>
-	<script src="styles/bootstrap4/bootstrap.min.js"></script>
-	<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-	<script src="plugins/easing/easing.js"></script>
-	<script src="plugins/parallax-js-master/parallax.min.js"></script>
-	<script src="js/custom.js"></script>
+	<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+	<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+	<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+	<script src="{% static 'plugins/easing/easing.js' %}"></script>
+	<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+	<script src="{% static 'js/custom.js' %}"></script>
 {% endblock %}

@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from .forms import RegistrationFrom
 from django.views.generic import TemplateView, FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.forms import UserCreationForm 
+
 
 def index(request):
     return render(request, 'health/index.html',{
@@ -36,5 +38,3 @@ def register(request):
             form.save()
             return HttpResponseRedirect('/login')
     return render(request, 'registration/register.html',{'form':form})
-
-

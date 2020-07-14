@@ -20,6 +20,7 @@ urlpatterns = [
    path('contact/logout/',auth_views.LogoutView.as_view(next_page='/'),name='logout'),
    path('services/logout/',auth_views.LogoutView.as_view(next_page='/'),name='logout'),
    path('about/logout/',auth_views.LogoutView.as_view(next_page='/'),name='logout'),
-   
+   path('news/logout/',auth_views.LogoutView.as_view(next_page='/'),name='logout'),
+       
    
 ]

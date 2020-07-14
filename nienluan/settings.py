@@ -103,7 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+AUTH_USER_MODEL = "health.MyUser"
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -130,3 +130,10 @@ STATICFILES_DIRS = [
    os.path.join(BASE_DIR, "static"),
 ]   
 FORCE_SCRIPT_NAME="/"
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'toanb1609555@student.ctu.edu.vn'
+EMAIL_HOST_PASSWORD = 'b#CNwCc2'
+EMAIL_USE_TLS = True

@@ -29,7 +29,7 @@
 				<li class="menu_item"><a href="{% url 'about_us' %}">Giới thiệu</a></li>
 				<li class="menu_item"><a href="{% url 'services' %}">Dịch vụ</a></li>
 				<li class="menu_item"><a href="{% url 'news' %}">Tin tức</a></li>
-				<li class="menu_item"><a href="{% url 'contact' %}">Liên hệ</a></li>
+				<li class="menu_item"><a href="{% url 'contact' %}">Đăng ký khám bệnh</a></li>
 			</ul>
 		</div>
 		<div class="menu_social">
@@ -67,7 +67,7 @@
 											
 												<li><a href="#">Chăm sóc khách hàng</a></li>
 												<li><a href="#">Dịch vụ khẩn cấp</a></li>
-												<li><a href="#">Đặt lịch hẹn</a></li>
+												<li><a href="{% url 'contact' %}">Đặt lịch hẹn</a></li>
 												{% if  user.username %}
 												<li><a>  {{user.username}} </a></li>
 												<li><a href="logout">Đăng xuất</a></li>
@@ -100,11 +100,12 @@
 													<li class="{%if nav == 'about_us' %}active{%endif%}"><a href="{% url 'about_us' %}">Giới thiệu</a></li>
 													<li class="{%if nav == 'services' %}active{%endif%}"><a href="{% url 'services' %}">Dịch vụ</a></li>
 													<li class="{%if nav == 'news' %}active{%endif%}"><a href="{% url 'news' %}">Tin tức</a></li>
-													<li class="{%if nav == 'contact' %}active{%endif%}"><a href="{% url 'contact' %}">Liên hệ</a></li>
+													<li class="{%if nav == 'contact' %}active{%endif%}"><a href="{% url 'contact' %}">Đăng ký khám bệnh</a></li>
 												</ul>
 											</nav>
 											<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
-												<form action="#" id="search_container_form" class="search_container_form">
+												<form action="/search/" id="search_container_form" class="search_container_form">
+													{% csrf_token %}
 													<input type="text" class="search_container_input" placeholder="Tìm kiếm" required="required">
 													<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 												</form>
@@ -161,15 +162,16 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 					<!-- Footer Contact -->
 					<div class="col-lg-5 footer_col">
 						<div class="footer_contact">
-							<div class="footer_contact_title", , style='color:black'>Quick Contact</div>
+							<div class="footer_contact_title", , style='color:black'>Đặt vấn đề</div>
 							<div class="footer_contact_form_container">
-								<form action="#" class="footer_contact_form" id="footer_contact_form">
+								<form action="" method="POST" class="footer_contact_form" id="footer_contact_form" >
+								{% csrf_token %}
 									<div class="d-flex flex-xl-row flex-column align-items-center justify-content-between">
-										<input type="text" class="footer_contact_input" placeholder="Name" required="required">
+										<input type="text" class="footer_contact_input" placeholder="Tên của bạn" required="required">
 										<input type="email" class="footer_contact_input" placeholder="E-mail" required="required">
 									</div>
-									<textarea class="footer_contact_input footer_contact_textarea" placeholder="Message" required="required"></textarea>
-									<button class="footer_contact_button">send message</button>
+									<textarea class="footer_contact_input footer_contact_textarea" placeholder="Vấn đề bạn đang gặp phải" required="required"></textarea>
+									<button class="footer_contact_button">Gửi</button>
 								</form>
 							</div>
 						</div>
@@ -209,18 +211,18 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 						<div class="footer_bar_content d-flex flex-sm-row flex-column align-items-lg-center align-items-start justify-content-start">
 							<nav class="footer_nav">
 								<ul class="d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
-									<li class="{%if nav == 'index' %}active{%endif%}"><a href="index.html">Trang chủ</a></li>
+									<li class="{%if nav == 'index' %}active{%endif%}"><a href="{% url 'index' %}">Trang chủ</a></li>
 									<li class="{%if nav == 'about_us' %}active{%endif%}"><a href="{% url 'about_us' %}">Giới thiệu</a></li>
 									<li class="{%if nav == 'services' %}active{%endif%}"><a href="{% url 'services' %}">Dịch vụ</a></li>
 									<li class="{%if nav == 'news' %}active{%endif%}"><a href="{% url 'news' %}">Tin tức</a></li>
-									<li class="{%if nav == 'contact' %}active{%endif%}"><a href="{% url 'contact' %}">Liên hệ</a></li>
+									<li class="{%if nav == 'contact' %}active{%endif%}"><a href="{% url 'contact' %}">Đăng ký khám bệnh</a></li>
 								</ul>
 							</nav>
 							<div class="footer_links">
 								<ul class="d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
 									<li><a href="#">Chăm sóc khách hàng</a></li>
 									<li><a href="#">Dịch vụ khẩn cấp</a></li>
-									<li><a href="#">Đặt lịch hẹn</a></li>
+									<li><a href="{% url 'contact' %}">Đặt lịch hẹn</a></li>
 								</ul>
 							</div>
 							<div class="footer_phone ml-lg-auto">
